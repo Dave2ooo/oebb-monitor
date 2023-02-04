@@ -1,7 +1,8 @@
 # oebb-monitor
 
-TEST
 
+
+Clone the 
 
 /config/www
 
@@ -14,7 +15,15 @@ apk add nodejs npm
 ```
 
 ```
+node -v
+```
+
+```
 npm install
+```
+
+```
+npm -v
 ```
 
 ```
