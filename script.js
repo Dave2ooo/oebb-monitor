@@ -1,5 +1,4 @@
-// Siemensstraße 1292105
-// Floridsdorf 1292101
+// https://github.com/Dave2ooo/oebb-monitor.git
 
 /* URL parameters
 hass_ip (optional) ... IP Address of the Homeassistant server
@@ -12,7 +11,7 @@ update_interval (optional) ... Updates the data every X second(s) (default: 30)
 */
 
 // #region Set default parameters
-var hass_ip = "192.168.1.169";
+https: var hass_ip = "192.168.1.169";
 var departure_station;
 var destination_station = "";
 var products_filter = 1011111111011;
