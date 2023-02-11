@@ -28,3 +28,7 @@ Finally, run the cors-server
 ```
 node cors-server.js
 ```
+The terminal should now show
+```
+Running CORS Anywhere on 0.0.0.0:8080
+```
