@@ -87,7 +87,6 @@ xhr.onreadystatechange = function () {
   const num_journeys = json_data.journey.length;
 
   if (!loadedFlag) {
-    console.log(typeof element_current_time);
     document.getElementById("current_time").innerHTML =
       GetCurrentTimeInHH_MMFormat();
 
