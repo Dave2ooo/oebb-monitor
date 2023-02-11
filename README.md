@@ -92,7 +92,7 @@ You can modify the OBB monitor by adding parameters to the URL in the Webpage ca
   ID of the departure station. This ID must be provided.
 #### destination_station
   ID of the destination station
-#### products_filter
+#### products_filter (better not touch this)
   filtering the mean of transportation (Train, Bus,...)
 #### num_journeys
   number of connections to show (default: 6)
