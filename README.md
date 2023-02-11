@@ -65,7 +65,7 @@ _I use the **Visual Studio Code** add-on to edit files._
 </details>
 
 
-<details><summary>Usage</summary>
+<details><summary>Adding Webpage card</summary>
 <p>
   
   1. Go to **Overview** and create a new **Webpage** card.
