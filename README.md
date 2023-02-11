@@ -2,7 +2,6 @@
 ![image](https://user-images.githubusercontent.com/71500391/218267029-6c6f41e5-1109-4f6f-8117-bfa696efd8d4.png)
 
 
-## Installation
 <details><summary>Installation</summary>
 <p>
   
@@ -49,8 +48,8 @@ _I use the **Visual Studio Code** add-on to edit files._
 </p>
 </details>
 
-# Getting ÖBB station ID
-<details><summary></summary>
+
+<details><summary>Getting ÖBB station ID</summary>
 <p>
   
   To get the monitor to show only connections from your desired station you need to get the respective station ID.
@@ -66,12 +65,11 @@ _I use the **Visual Studio Code** add-on to edit files._
 </details>
 
 
-## Usage
-<details><summary></summary>
+<details><summary>Usage</summary>
 <p>
   
   1. Go to **Overview** and create a new **Webpage** card.
-  2. In the **URL** field enter the following and replace the **departure_station** parameter.
+  2. In the **URL** field enter the following and replace the **departure_station** parameter with the ID of your desired station.
   ```
   /local/Scotty/index.html?departure_station=1234567
   ```
