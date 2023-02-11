@@ -77,3 +77,30 @@ _I use the **Visual Studio Code** add-on to edit files._
   
 </p>
 </details>
+
+
+<details><summary>Settings</summary>
+<p>
+You can modify the OBB monitor by adding parameters to the URL in the Webpage card.
+  e.g. 
+  
+  ```
+  /local/oebb-monitor/index.html?departure_station=1290401&destination_station=1292101&products_filter=1011111111011&num_journeys=7&additional_time=5&update_interval=60
+  ```
+  
+#### departure_station (required)
+  ID of the departure station. This ID must be provided.
+#### destination_station
+  ID of the destination station
+#### products_filter
+  filtering the mean of transportation (Train, Bus,...)
+#### num_journeys
+  number of connections to show (default: 6)
+#### additional_time
+  lead time in minutes (default: 0)
+#### update_interval
+  Updates the data every X second(s) (default: 30)
+  
+  
+</p>
+</details>
