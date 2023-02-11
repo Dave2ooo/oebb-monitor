@@ -2,7 +2,6 @@
 ![image](https://user-images.githubusercontent.com/71500391/218267029-6c6f41e5-1109-4f6f-8117-bfa696efd8d4.png)
 
 
-## Installation
 <details><summary>Installation</summary>
 <p>
   
@@ -39,6 +38,7 @@ The terminal should now show
 ```
 Running CORS Anywhere on 0.0.0.0:8080
 ```
+This CORS server must be running all the time in order to retrieve data from the ÖBB.
   
 6. Finally, open the **script.js** file and change the value of the **hass_ip** parameter to your Homeassistant servers IP address.
 _I use the **Visual Studio Code** add-on to edit files._
@@ -49,8 +49,8 @@ _I use the **Visual Studio Code** add-on to edit files._
 </p>
 </details>
 
-# Getting ÖBB station ID
-<details><summary></summary>
+
+<details><summary>Getting ÖBB station ID</summary>
 <p>
   
   To get the monitor to show only connections from your desired station you need to get the respective station ID.
@@ -66,15 +66,41 @@ _I use the **Visual Studio Code** add-on to edit files._
 </details>
 
 
-## Usage
-<details><summary></summary>
+<details><summary>Adding Webpage card</summary>
 <p>
   
   1. Go to **Overview** and create a new **Webpage** card.
-  2. In the **URL** field enter the following and replace the **departure_station** parameter.
+  2. In the **URL** field enter the following and replace the **departure_station** parameter with the ID of your desired station.
   ```
   /local/Scotty/index.html?departure_station=1234567
   ```
+  
+  
+</p>
+</details>
+
+
+<details><summary>Modify your Monitor</summary>
+<p>
+You can modify the OBB monitor by adding parameters to the URL in the Webpage card.
+  e.g. 
+  
+  ```
+  /local/oebb-monitor/index.html?departure_station=1290401&destination_station=1292101&products_filter=1011111111011&num_journeys=7&additional_time=5&update_interval=60
+  ```
+  
+#### departure_station (required)
+  ID of the departure station. This ID must be provided.
+#### destination_station
+  ID of the destination station
+#### products_filter (better not touch this)
+  filtering the mean of transportation (Train, Bus,...)
+#### num_journeys
+  number of connections to show (default: 6)
+#### additional_time
+  lead time in minutes (default: 0)
+#### update_interval
+  Updates the data every X second(s) (default: 30)
   
   
 </p>
