@@ -79,7 +79,7 @@ _I use the **Visual Studio Code** add-on to edit files._
 </details>
 
 
-<details><summary>Settings</summary>
+<details><summary>Modify your Monitor</summary>
 <p>
 You can modify the OBB monitor by adding parameters to the URL in the Webpage card.
   e.g. 
