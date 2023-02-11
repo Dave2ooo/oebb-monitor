@@ -15,22 +15,16 @@ Now, navigate to config/www/oebb-monitor/server
 ```
 cd ~/config/www/oebb-monitor/server
 ```
+Install Node.js
 ```
 apk add nodejs npm
 ```
 
-```
-node -v
-```
-
+Install npm
 ```
 npm install
 ```
-
-```
-npm -v
-```
-
+Finally, run the cors-server
 ```
 node cors-server.js
 ```
