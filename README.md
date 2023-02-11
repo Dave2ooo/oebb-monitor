@@ -2,11 +2,10 @@
 
 
 
-Clone the 
-
-/config/www
+Go to config/www and clone the repository.
 
 ```
+cd config/www
 git clone https://github.com/Dave2ooo/oebb-monitor.git
 ```
 
