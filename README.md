@@ -38,6 +38,7 @@ The terminal should now show
 ```
 Running CORS Anywhere on 0.0.0.0:8080
 ```
+This CORS server must be running all the time in order to retrieve data from the ÖBB.
   
 6. Finally, open the **script.js** file and change the value of the **hass_ip** parameter to your Homeassistant servers IP address.
 _I use the **Visual Studio Code** add-on to edit files._
