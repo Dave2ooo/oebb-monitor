@@ -39,6 +39,10 @@ The terminal should now show
 Running CORS Anywhere on 0.0.0.0:8080
 ```
 This CORS server must be running all the time in order to retrieve data from the ÖBB.
+
+  If everyting worked the terminal schould look like this.
+  ![Terminal_commands](https://user-images.githubusercontent.com/71500391/218303268-3f628d1f-12c4-467f-8533-0d29f262fd9f.jpg)
+
   
 6. Finally, open the **script.js** file and change the value of the **hass_ip** parameter to your Homeassistant servers IP address.
 _I use the **Visual Studio Code** add-on to edit files._
@@ -56,9 +60,9 @@ _I use the **Visual Studio Code** add-on to edit files._
   To get the monitor to show only connections from your desired station you need to get the respective station ID.
   1. Open https://fahrplan.oebb.at/bin/query.exe/en?
   2. Click on **Station information**
-  3. Serach for your station and click **Display information**
+  3. Enter the name of your station and click **Display information**
   4. Click on **View <HTML> sourcecode**
-  5. Copy **evaId** number
+  5. Copy the **evaId** number
   ![image](https://user-images.githubusercontent.com/71500391/218268878-24756c72-f5a8-4138-8413-6330f2b967b5.png)
 
   
@@ -70,7 +74,7 @@ _I use the **Visual Studio Code** add-on to edit files._
 <p>
   
   1. Go to **Overview** and create a new **Webpage** card.
-  2. In the **URL** field enter the following and replace the **departure_station** parameter with the ID of your desired station.
+  2. In the **URL** field enter the following and replace the **departure_station** parameter with the ID of your desired station (evaId).
   ```
   /local/Scotty/index.html?departure_station=1234567
   ```
@@ -80,7 +84,7 @@ _I use the **Visual Studio Code** add-on to edit files._
 </details>
 
 
-<details><summary>Modify your Monitor</summary>
+<details><summary>Personalize your Monitor</summary>
 <p>
 You can modify the OBB monitor by adding parameters to the URL in the Webpage card.
   e.g. 
@@ -89,6 +93,7 @@ You can modify the OBB monitor by adding parameters to the URL in the Webpage ca
   /local/oebb-monitor/index.html?departure_station=1290401&destination_station=1292101&products_filter=1011111111011&num_journeys=7&additional_time=5&update_interval=60
   ```
   
+  ### Parameters
 #### departure_station (required)
   ID of the departure station. This ID must be provided.
 #### destination_station
