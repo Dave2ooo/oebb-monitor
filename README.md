@@ -1,7 +1,13 @@
 # oebb-monitor WIP
+
+
+This Homeassistant ÖBB monitor shows you the live departure times of the public transportation system from your desired train, tram or bus station. You can also select a destination station to only see the connections you need.
+
 ![image](https://user-images.githubusercontent.com/71500391/218267029-6c6f41e5-1109-4f6f-8117-bfa696efd8d4.png)
 
-
+ This ÖBB monitor is designed to be used in [Homeassistant](https://www.home-assistant.io/) but it's not restricted to Homeassistant.
+ 
+ 
 <details><summary>Installation</summary>
 <p>
   
@@ -95,7 +101,7 @@ You can modify the OBB monitor by adding parameters to the URL in the Webpage ca
   
   ### Parameters
 #### departure_station (required)
-  ID of the departure station. This ID must be provided.
+  ID of the departure station. See previous section for how to obtain your stations ID.
 #### destination_station
   ID of the destination station. If provided, the monitor only shows connections from your departure station to your destination station.
 #### products_filter (better not touch this)
