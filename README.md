@@ -23,6 +23,7 @@ Using the terminal execute the following commands.
  
 <details><summary>Step-by-step guide</summary>
 <p>
+ 
 1. Navigate to "config/www" 
 ```
 cd ~/config/www
