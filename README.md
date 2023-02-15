@@ -68,7 +68,7 @@ _I use the **Visual Studio Code** add-on to edit files._
 <p>
   
   To get the monitor to show only connections from your desired station you need to get the respective station ID.
-  1. Open [Scotty](https://fahrplan.oebb.at/bin/query.exe/en?)
+  1. Open [Scotty](https://fahrplan.oebb.at/bin/stboard.exe/en?newrequest=yes&)
   2. Click on **Station information**
   3. Enter the name of your station and click **Display information**
   4. Click on **View <HTML> sourcecode**
