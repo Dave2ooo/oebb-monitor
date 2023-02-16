@@ -24,27 +24,19 @@ Using the terminal execute the following commands.
 <details><summary>Step-by-step guide</summary>
 <p>
  
-1. Navigate to "config/www" 
+1. Clone the repository into config/www/
 ```
-cd ~/config/www
+cd ~/config/www && git clone https://github.com/Dave2ooo/oebb-monitor.git && cd ~/config/www/oebb-monitor/server
 ```
-2. Clone the repository
-```
-git clone https://github.com/Dave2ooo/oebb-monitor.git
-```
-3. Navigate to config/www/oebb-monitor/server
-```
-cd ~/config/www/oebb-monitor/server
-```
-4. Install Node.js
+2. Inside the server folder, install Node.js
 ```
 apk add nodejs npm
 ```
-5. Install npm
+3. Install npm
 ```
 npm install
 ```
-5. Run the cors-server
+4. Run the cors-server
 ```
 node cors-server.js
 ```
@@ -54,7 +46,7 @@ Running CORS Anywhere on 0.0.0.0:8080
 ```
 This CORS server must be running all the time in order to retrieve data from the ÖBB.
   
-6. Finally, open the **script.js** file and change the value of the **hass_ip** parameter to your Homeassistant servers IP address.
+5. Finally, open the **script.js** file and change the value of the **hass_ip** parameter to your Homeassistant servers IP address.
 _I use the **Visual Studio Code** add-on to edit files._
 
 ![image](https://user-images.githubusercontent.com/71500391/218267834-9eddbd79-67c8-496b-bb82-22b27ef2032e.png)
