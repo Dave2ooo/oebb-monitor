@@ -1,4 +1,4 @@
-# oebb-monitor WIP
+# oebb-monitor
 
 
 This Homeassistant ÖBB monitor shows you the live departure times of the public transportation system from your desired train, tram or bus station. You can also select a destination station to only see the connections you need.
