@@ -107,6 +107,7 @@ function CallAPI() {
         // Get data from JSON
         const scheduled_departure_time = json_data.journey[i].ti;
         const actual_departure_time = json_data.journey[i].rt.dlt;
+        const status = json_data.journey[i].rt.status;
         const direction = json_data.journey[i].st;
 
         // Table
@@ -129,10 +130,17 @@ function CallAPI() {
 
         // Check if train is late
         if (actual_departure_time != undefined) {
-          // Train late
-          dataCell1.innerHTML = actual_departure_time;
-          minutes_left = CalculateTimeLeft(actual_departure_time);
+          if (status == "Ausfall") {
+            // Train cancelled
+            dataCell1.innerHTML = "Ausfall";
+            minutes_left = CalculateTimeLeft(scheduled_departure_time);
+          } else {
+            // Train late
+            dataCell1.innerHTML = actual_departure_time;
+            minutes_left = CalculateTimeLeft(actual_departure_time);
+          }
         } else {
+          // Train on time
           minutes_left = CalculateTimeLeft(scheduled_departure_time);
         }
         dataCell0.innerHTML = minutes_left;
