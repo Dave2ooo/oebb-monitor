@@ -61,6 +61,7 @@ To get the monitor to show only connections from your desired station you need t
   3. Enter the name of your station and click **Display information**
   4. Click on **View <HTML> sourcecode**
   5. Copy the **evaId** number
+ 
   ![image](https://user-images.githubusercontent.com/71500391/218268878-24756c72-f5a8-4138-8413-6330f2b967b5.png)
  
 </p>
