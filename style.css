@@ -34,17 +34,9 @@ body {
 }
 
 #current_time {
-  margin-top: 0;
+  margin-top: 5px;
   margin-bottom: 5px;
 }
-/* 
-.row .cell {
-  font-family: Poppins-Regular;
-  color: rgb(255, 255, 255);
-  line-height: 1.2;
-  font-weight: unset !important;
-  padding-right: 10px;
-} */
 
 #head {
   display: flex;
