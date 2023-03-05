@@ -15,13 +15,6 @@ Unfortunately, it's not that easy. In order to fetch the data you need to have a
   
 To use the oebb-monitor you need to have access to a terminal on your Homeassistant.
 I recommend using Add-ons from the Hoemassistant [Add-on store](https://my.home-assistant.io/redirect/supervisor).
-
-Using the terminal execute the following commands.
-
- ![Terminal_commands](https://user-images.githubusercontent.com/71500391/218303268-3f628d1f-12c4-467f-8533-0d29f262fd9f.jpg)
- 
- Open the **script.js** file inside the **config/www/oebb-monitor** folder and change the value of the **hass_ip** parameter to your Homeassistant servers IP address.
-_I use the **Visual Studio Code** add-on to edit files._
  
 <details><summary>Step-by-step installation</summary>
 <p>
