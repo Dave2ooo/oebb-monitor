@@ -65,9 +65,13 @@ const url_scotty =
 
 var loadedFlag = false;
 
+var last_response = "";
+var last_minutes = "";
+
 // var dummy = 0;
 
 function CallAPI() {
+  document.getElementById("info").innerHTML = "updating";
   fetch("http://" + hass_ip + ":8080/" + url_scotty, {
     method: "GET",
     headers: { "X-Requested-With": "XMLHttpRequest" },
@@ -77,117 +81,139 @@ function CallAPI() {
     .then((response) => {
       //if successfull do something
       // #region Get JSON data
-      var json_data_string = response;
-      if (typeof json_data_string == "undefined") return;
-      json_data_string = json_data_string.split("=");
-      json_data_string = json_data_string[1];
-      if (typeof json_data_string == "undefined") return;
-      json_data_string = json_data_string.trimStart();
-      var json_data = JSON.parse(json_data_string);
-      if (json_data.journey == undefined) {
-        console.error("no journeys available \n" + json_data_string);
+      if (response != last_response) {
+        UpdateTable(response);
+        last_response = response;
       }
-      // #endregion
-
-      // Use JSON data
-      const num_journeys = json_data.journey.length;
-
-      //if (!loadedFlag) {
-      document.getElementById("current_time").innerHTML =
-        GetCurrentTimeInHH_MMFormat();
-
-      // create table element
-      var table = document.createElement("table");
-      table.setAttribute("id", "table");
-
-      // create table body with data rows
-      var tableBody = document.createElement("tbody");
-
-      for (let i = 0; i < num_journeys; i++) {
-        // Get data from JSON
-        const scheduled_departure_time = json_data.journey[i].ti;
-        const actual_departure_time = json_data.journey[i].rt.dlt;
-        const status = json_data.journey[i].rt.status;
-        const direction = json_data.journey[i].st;
-
-        // Table
-        var dataRow = document.createElement("tr");
-        var dataCell0 = document.createElement("td");
-        var dataCell1 = document.createElement("td");
-        var dataCell2 = document.createElement("td");
-        var dataCell3 = document.createElement("td");
-        dataRow.appendChild(dataCell0);
-        dataRow.appendChild(dataCell1);
-        dataRow.appendChild(dataCell2);
-        dataRow.appendChild(dataCell3);
-        dataRow.classList.add("row");
-        dataCell0.classList.add("cell", "minutes_left");
-        dataCell1.classList.add("cell", "actual_departure_time");
-        dataCell2.classList.add("cell", "scheduled_departure_time");
-        dataCell3.classList.add("cell", "direction");
-        tableBody.appendChild(dataRow);
-        table.appendChild(tableBody);
-
-        // Check if train is late
-        if (actual_departure_time != undefined) {
-          if (status == "Ausfall") {
-            // Train cancelled
-            dataCell1.innerHTML = "Ausfall";
-            minutes_left = CalculateTimeLeft(scheduled_departure_time);
-          } else {
-            // Train late
-            dataCell1.innerHTML = actual_departure_time;
-            minutes_left = CalculateTimeLeft(actual_departure_time);
-          }
-        } else {
-          // Train on time
-          minutes_left = CalculateTimeLeft(scheduled_departure_time);
-        }
-        dataCell0.innerHTML = minutes_left;
-        dataCell2.innerHTML = scheduled_departure_time;
-        dataCell3.innerHTML = direction;
-      }
-      // Delete old table
-      const myTable = document.getElementById("table");
-      if (myTable != null) myTable.remove();
-      // Add new table
-      document.getElementById("tableContainer").appendChild(table);
-      loadedFlag = 1;
-      //}
-      console.log("Success: " + response);
     })
     .catch((response) => {
       //if error do something
       console.error(response);
       document.getElementById("current_time").innerHTML += response;
     });
+  setTimeout(function () {
+    document.getElementById("info").innerHTML = "";
+  }, 1000);
+}
 
-  function CalculateTimeLeft(_dep_time) {
-    const _dep_hours = parseInt(_dep_time.slice(0, 2));
-    const _dep_minutes = parseInt(_dep_time.slice(3));
+function CalculateTimeLeft(_dep_time) {
+  const _dep_hours = parseInt(_dep_time.slice(0, 2));
+  const _dep_minutes = parseInt(_dep_time.slice(3));
 
-    const timestamp = Date.now();
-    const date = new Date(timestamp);
-    const _current_hours = date.getHours();
-    const _current_minutes = date.getMinutes();
+  const timestamp = Date.now();
+  const date = new Date(timestamp);
+  const _current_hours = date.getHours();
+  const _current_minutes = date.getMinutes();
 
-    var _minutes_left = 60 * (_dep_hours - _current_hours);
-    if (_minutes_left < 0) _minutes_left += 60 * 24;
-    _minutes_left += _dep_minutes - _current_minutes;
+  var _minutes_left = 60 * (_dep_hours - _current_hours);
+  if (_minutes_left < 0) _minutes_left += 60 * 24;
+  _minutes_left += _dep_minutes - _current_minutes;
 
-    return _minutes_left;
+  return _minutes_left;
+}
+
+function GetCurrentTimeInHH_MMFormat() {
+  const timestamp = Date.now();
+  const date = new Date(timestamp);
+  var _current_hours = date.getHours();
+  var _current_minutes = date.getMinutes();
+
+  if (_current_hours < 10) _current_hours = "0" + _current_hours;
+  if (_current_minutes < 10) _current_minutes = "0" + _current_minutes;
+
+  return _current_hours + ":" + _current_minutes;
+}
+
+function UpdateTable(response) {
+  var json_data_string = response;
+  if (typeof json_data_string == "undefined") return;
+  json_data_string = json_data_string.split("=");
+  json_data_string = json_data_string[1];
+  if (typeof json_data_string == "undefined") return;
+  json_data_string = json_data_string.trimStart();
+  var json_data = JSON.parse(json_data_string);
+  if (json_data.journey == undefined) {
+    console.error("no journeys available \n" + json_data_string);
   }
+  // #endregion
 
-  function GetCurrentTimeInHH_MMFormat() {
-    const timestamp = Date.now();
-    const date = new Date(timestamp);
-    var _current_hours = date.getHours();
-    var _current_minutes = date.getMinutes();
+  // Use JSON data
+  const num_journeys = json_data.journey.length;
 
-    if (_current_hours < 10) _current_hours = "0" + _current_hours;
-    if (_current_minutes < 10) _current_minutes = "0" + _current_minutes;
+  //if (!loadedFlag) {
+  document.getElementById("current_time").innerHTML =
+    GetCurrentTimeInHH_MMFormat();
 
-    return _current_hours + ":" + _current_minutes;
+  // create table element
+  var table = document.createElement("table");
+  table.setAttribute("id", "table");
+
+  // create table body with data rows
+  var tableBody = document.createElement("tbody");
+
+  for (let i = 0; i < num_journeys; i++) {
+    // Get data from JSON
+    const scheduled_departure_time = json_data.journey[i].ti;
+    const actual_departure_time = json_data.journey[i].rt.dlt;
+    const status = json_data.journey[i].rt.status;
+    const direction = json_data.journey[i].st;
+
+    // Table
+    var dataRow = document.createElement("tr");
+    var dataCell0 = document.createElement("td");
+    var dataCell1 = document.createElement("td");
+    var dataCell2 = document.createElement("td");
+    var dataCell3 = document.createElement("td");
+    dataRow.appendChild(dataCell0);
+    dataRow.appendChild(dataCell1);
+    dataRow.appendChild(dataCell2);
+    dataRow.appendChild(dataCell3);
+    dataRow.classList.add("row");
+    dataCell0.classList.add("cell", "minutes_left");
+    dataCell1.classList.add("cell", "actual_departure_time");
+    dataCell2.classList.add("cell", "scheduled_departure_time");
+    dataCell3.classList.add("cell", "direction");
+    tableBody.appendChild(dataRow);
+    table.appendChild(tableBody);
+
+    // Check if train is late
+    if (actual_departure_time != undefined) {
+      if (status == "Ausfall") {
+        // Train cancelled
+        dataCell1.innerHTML = "Ausfall";
+        minutes_left = CalculateTimeLeft(scheduled_departure_time);
+      } else {
+        // Train late
+        dataCell1.innerHTML = actual_departure_time;
+        minutes_left = CalculateTimeLeft(actual_departure_time);
+      }
+    } else {
+      // Train on time
+      minutes_left = CalculateTimeLeft(scheduled_departure_time);
+    }
+    dataCell0.innerHTML = minutes_left;
+    dataCell2.innerHTML = scheduled_departure_time;
+    dataCell3.innerHTML = direction;
+  }
+  // Delete old table
+  const myTable = document.getElementById("table");
+  if (myTable != null) myTable.remove();
+  // Add new table
+  document.getElementById("tableContainer").appendChild(table);
+  loadedFlag = 1;
+  //}
+  console.log("Success: " + response);
+}
+
+function GetLatestTime() {
+  const timestamp = Date.now();
+  const date = new Date(timestamp);
+  // var _current_hours = date.getHours();
+  var _current_minutes = date.getMinutes();
+
+  if (_current_minutes != last_minutes) {
+    UpdateTable(last_response);
+    last_minutes = _current_minutes;
   }
 }
 
@@ -202,7 +228,7 @@ window.addEventListener("load", (event) => {
     return;
   }
 
-  document.getElementById("current_time").innerHTML += "loading: ";
+  setInterval(GetLatestTime, 1000);
   setInterval(CallAPI, update_interval);
   CallAPI();
 });
