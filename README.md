@@ -1,7 +1,7 @@
 # oebb-monitor
 
 
-This Homeassistant ÖBB monitor shows you the live departure times of the public transportation system from your desired train, tram or bus station. You can also select a destination station to only see the connections you need.
+This Homeassistant ÖBB monitor shows you the live departure times of the public transportation system from your desired train, tram or bus station in Austria. You can also select a destination station to only see the connections you need.
 
 ![image](https://user-images.githubusercontent.com/71500391/218267029-6c6f41e5-1109-4f6f-8117-bfa696efd8d4.png)
 
@@ -12,16 +12,18 @@ This ÖBB monitor is basically a webpage which fetches data from [Scotty](https:
 Unfortunately, it's not that easy. In order to fetch the data you need to have a CORS server running. This CORS server will be running on the Homeassistant server. Now, you only have to ask the CORS server to give you the desired data.
  
  ## Installation
-
   
-To use the oebb-monitor you need to have access to a terminal on the Homeassistant.
+To use the oebb-monitor you need to have access to a terminal on your Homeassistant.
 I recommend using Add-ons from the Hoemassistant [Add-on store](https://www.home-assistant.io/addons/#:~:text=Add%2Dons%20can%20be%20configured,Add%2Don%20store%22%20tab).
 
 Using the terminal execute the following commands.
 
  ![Terminal_commands](https://user-images.githubusercontent.com/71500391/218303268-3f628d1f-12c4-467f-8533-0d29f262fd9f.jpg)
  
-<details><summary>Step-by-step guide</summary>
+ Open the **script.js** file inside the **config/www/oebb-monitor** folder and change the value of the **hass_ip** parameter to your Homeassistant servers IP address.
+_I use the **Visual Studio Code** add-on to edit files._
+ 
+<details><summary>Step-by-step installation</summary>
 <p>
  
 1. Clone the repository into config/www/
@@ -44,9 +46,9 @@ The terminal should now show
 ```
 Running CORS Anywhere on 0.0.0.0:8080
 ```
-This CORS server must be running all the time in order to retrieve data from the ÖBB.
+This CORS server must be running all the time in order to retrieve data from Scotty.
   
-5. Finally, open the **script.js** file and change the value of the **hass_ip** parameter to your Homeassistant servers IP address.
+5. Finally, open the **script.js** file inside the **config/www/oebb-monitor** folder and change the value of the **hass_ip** parameter to your Homeassistant servers IP address.
 _I use the **Visual Studio Code** add-on to edit files._
 
 ![image](https://user-images.githubusercontent.com/71500391/218267834-9eddbd79-67c8-496b-bb82-22b27ef2032e.png)
