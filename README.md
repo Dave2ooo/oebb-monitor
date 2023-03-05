@@ -108,6 +108,8 @@ You can modify the OBB monitor by adding parameters to the URL in the Webpage ca
   lead time in minutes (default: 0)
 #### update_interval
   Updates the data every X second(s) (default: 30)
+#### display_clock
+ if "true", displays the current time
   
   
 </p>
