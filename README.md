@@ -51,11 +51,10 @@ _I use the **Visual Studio Code** add-on to edit files._
 </p>
 </details>
 
-Now you need to figure out the ÖBB station ID of you desired public transport station.
+To get the monitor to show only connections from your desired station you need to get the respective station ID.
 
 <details><summary>Getting ÖBB station ID</summary>
 <p>
-  To get the monitor to show only connections from your desired station you need to get the respective station ID.
   1. Open [Scotty](https://fahrplan.oebb.at/bin/stboard.exe/en?newrequest=yes&)
   2. Click on **Station information**
   3. Enter the name of your station and click **Display information**
