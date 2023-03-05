@@ -14,7 +14,7 @@ Unfortunately, it's not that easy. In order to fetch the data you need to have a
  ## Installation
   
 To use the oebb-monitor you need to have access to a terminal on your Homeassistant.
-I recommend using Add-ons from the Hoemassistant [Add-on store](https://www.home-assistant.io/addons/#:~:text=Add%2Dons%20can%20be%20configured,Add%2Don%20store%22%20tab).
+I recommend using Add-ons from the Hoemassistant [Add-on store]([https://www.home-assistant.io/addons/#:~:text=Add%2Dons%20can%20be%20configured,Add%2Don%20store%22%20tab](https://my.home-assistant.io/redirect/supervisor)).
 
 Using the terminal execute the following commands.
 
