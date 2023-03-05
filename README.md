@@ -48,14 +48,13 @@ _I use the **Visual Studio Code** add-on to edit files._
 
 ![image](https://user-images.githubusercontent.com/71500391/218267834-9eddbd79-67c8-496b-bb82-22b27ef2032e.png)
 
-
 </p>
 </details>
 
+Now you need to figure out the ÖBB station ID of you desired public transport station.
 
 <details><summary>Getting ÖBB station ID</summary>
 <p>
-  
   To get the monitor to show only connections from your desired station you need to get the respective station ID.
   1. Open [Scotty](https://fahrplan.oebb.at/bin/stboard.exe/en?newrequest=yes&)
   2. Click on **Station information**
@@ -63,11 +62,10 @@ _I use the **Visual Studio Code** add-on to edit files._
   4. Click on **View <HTML> sourcecode**
   5. Copy the **evaId** number
   ![image](https://user-images.githubusercontent.com/71500391/218268878-24756c72-f5a8-4138-8413-6330f2b967b5.png)
-
-  
 </p>
 </details>
 
+Now that you have your desired ÖBB station ID you can finally go ahead and create a card on your Homeassistant Dashboard.
 
 <details><summary>Adding Webpage card</summary>
 <p>
@@ -78,20 +76,20 @@ _I use the **Visual Studio Code** add-on to edit files._
   /local/Scotty/index.html?departure_station=1234567
   ```
   
-  
 </p>
 </details>
 
+The ÖBB monitor should now display the upcoming departures from your public transport station. 
 
-<details><summary>Personalize your Monitor</summary>
-<p>
 You can modify the OBB monitor by adding parameters to the URL in the Webpage card.
   e.g. 
   
   ```
   /local/oebb-monitor/index.html?departure_station=1290401&destination_station=1292101&products_filter=1011111111011&num_journeys=7&additional_time=5&update_interval=60
   ```
-  
+
+<details><summary>Personalize your Monitor</summary>
+<p>
   ### Parameters
 #### departure_station (required)
   ID of the departure station. See previous section for how to obtain your stations ID.
@@ -107,7 +105,5 @@ You can modify the OBB monitor by adding parameters to the URL in the Webpage ca
   Updates the data every X second(s) (default: 30)
 #### display_clock
  if "true", displays the current time
-  
-  
 </p>
 </details>
