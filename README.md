@@ -92,6 +92,7 @@ You can modify the OBB monitor by adding parameters to the URL in the Webpage ca
 
 <details><summary>Personalize your Monitor</summary>
 <p>
+ 
   ### Parameters
 #### departure_station (required)
   ID of the departure station. See previous section for how to obtain your stations ID.
@@ -107,5 +108,6 @@ You can modify the OBB monitor by adding parameters to the URL in the Webpage ca
   Updates the data every X second(s) (default: 30)
 #### display_clock
  if "true", displays the current time
+ 
 </p>
 </details>
