@@ -8,16 +8,18 @@ products_filter (optional) ... filtering the mean of transportation (Train, Bus,
 num_journeys (optional) ... number of connections to show (default: 6)
 additional_time (optional) ... lead time in minutes (default: 0)
 update_interval (optional) ... Updates the data every X second(s) (default: 30)
+display_clock (optional) ... if true: displays a digital clock
 */
 
 // #region Set default parameters
-https: var hass_ip = "192.168.1.169";
+var hass_ip = "192.168.1.169";
 var departure_station;
 var destination_station = "";
 var products_filter = 1011111111011;
 var set_num_journeys = 6;
 var set_additional_time = 0; // minutes
 var update_interval = 30000;
+var display_clock = false;
 // #endregion
 
 // #region Read URL parameters */
@@ -44,6 +46,11 @@ if (urlParams.has("additional_time")) {
 }
 if (urlParams.has("update_interval")) {
   update_interval = urlParams.get("update_interval") * 1000;
+}
+if (urlParams.has("display_clock")) {
+  if (urlParams.get("display_clock") == "true") {
+    display_clock = true;
+  }
 }
 // #endregion
 
@@ -93,7 +100,7 @@ function CallAPI() {
     });
   setTimeout(function () {
     document.getElementById("info").innerHTML = "";
-  }, 1000);
+  }, 1000); // deletes the "update" text
 }
 
 function CalculateTimeLeft(_dep_time) {
@@ -141,9 +148,10 @@ function UpdateTable(response) {
   const num_journeys = json_data.journey.length;
 
   //if (!loadedFlag) {
-  document.getElementById("current_time").innerHTML =
-    GetCurrentTimeInHH_MMFormat();
-
+  if (display_clock == true) {
+    document.getElementById("current_time").innerHTML =
+      GetCurrentTimeInHH_MMFormat();
+  }
   // create table element
   var table = document.createElement("table");
   table.setAttribute("id", "table");
@@ -218,6 +226,7 @@ function GetLatestTime() {
 }
 
 window.addEventListener("load", (event) => {
+  document.getElementById("current_time").innerHTML = "";
   // Display error if departure station is not stated
   if (!urlParams.has("departure_station")) {
     document.getElementById("current_time").innerHTML =
