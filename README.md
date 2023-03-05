@@ -55,12 +55,14 @@ To get the monitor to show only connections from your desired station you need t
 
 <details><summary>Getting ÖBB station ID</summary>
 <p>
+ 
   1. Open [Scotty](https://fahrplan.oebb.at/bin/stboard.exe/en?newrequest=yes&)
   2. Click on **Station information**
   3. Enter the name of your station and click **Display information**
   4. Click on **View <HTML> sourcecode**
   5. Copy the **evaId** number
   ![image](https://user-images.githubusercontent.com/71500391/218268878-24756c72-f5a8-4138-8413-6330f2b967b5.png)
+ 
 </p>
 </details>
 
