@@ -107,3 +107,4 @@ If you make any changes to
  * script.js
  
  you will need to clear your browsers cache so that the webpage card uses the updated files.
+ In Google Chrome only this (Add-on)[https://chrome.google.com/webstore/detail/clear-site-data/aihgofjefdlhpnmeakpnjjeajofpcbhj] worked for me.
