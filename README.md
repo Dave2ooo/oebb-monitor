@@ -9,7 +9,7 @@ This Homeassistant ÖBB monitor shows you the live departure times of the public
  
 ## Overview
 This ÖBB monitor is basically a webpage which fetches data from [Scotty](https://fahrplan.oebb.at/bin/query.exe/en?) and displays it nicely.
-Unfortunately, it's not that easy. In order to fetch the data you need to have a CORS server running. This CORS server will be running on the Homeassistant server. Now, you only have to ask the CORS server to give you the desired data.
+Unfortunately, it's not that easy. In order to fetch the data you need to have a CORS server running. This CORS server will be running on the Homeassistant server.
  
  ## Installation
   
