@@ -72,16 +72,18 @@ To get the monitor to only show connections from your desired station you need t
 
 The ÖBB monitor should now display the upcoming departures from your public transport station. 
 
-You can modify the OBB monitor by adding parameters to the URL in the Webpage card.
+
+### Personalize your Monitor
+ You can modify the OBB monitor by adding parameters to the URL in the Webpage card.
   e.g. 
   
   ```
   /local/oebb-monitor/index.html?departure_station=1290401&destination_station=1292101&products_filter=1011111111011&num_journeys=7&additional_time=5&update_interval=60
   ```
-
-### Personalize your Monitor
  
   ### Parameters
+#### hass_ip (optional)
+ IP address of your Homeassistant. This parameter can also be stated in the **script.js** file.
 #### departure_station (required)
   ID of the departure station. [Getting ÖBB station ID](#Getting-ÖBB-station-ID)
 #### destination_station
