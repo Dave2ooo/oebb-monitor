@@ -12,7 +12,7 @@ display_clock (optional) ... if true: displays a digital clock
 */
 
 // #region Set default parameters
-var hass_ip = "192.168.1.169";
+var hass_ip = "X.X.X.X"; // example 192.168.1.169
 var departure_station;
 var destination_station = "";
 var products_filter = 1011111111011;
@@ -69,6 +69,11 @@ const url_scotty =
   "&productsFilter=" +
   products_filter +
   "&outputMode=tickerDataOnly";
+
+const error_msg_ip_missing =
+  'IP address of the Homeassistant (hass_ip) must be stated either in the script.js file or in the URL e.g.: "/local/oebb-monitor/index.html?hass_ip=X.X.X.X"';
+const error_msg_departure_station_missing =
+  'Departure station must be stated in the URL: "/local/oebb-monitor/index.html?departure_station=1234567"';
 
 var loadedFlag = false;
 
@@ -228,12 +233,14 @@ function GetLatestTime() {
 window.addEventListener("load", (event) => {
   document.getElementById("current_time").innerHTML = "";
   // Display error if departure station is not stated
-  if (!urlParams.has("departure_station")) {
+  if (hass_ip == "X.X.X.X") {
+    document.getElementById("current_time").innerHTML = error_msg_ip_missing;
+    console.error(error_msg_ip_missing);
+    return;
+  } else if (!urlParams.has("departure_station")) {
     document.getElementById("current_time").innerHTML =
-      'Departure station must be stated: "url+?departure_station=1234567"';
-    console.error(
-      'Departure station must be stated: "url+?departure_station=1234567"'
-    );
+      error_msg_departure_station_missing;
+    console.error(error_msg_departure_station_missing);
     return;
   }
 
