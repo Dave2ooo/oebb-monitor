@@ -52,8 +52,7 @@ I recommend setting the IP address to static on your router, so that the IP addr
 
 To get the monitor to show only connections from your desired station you need to get the respective station ID.
 
-<details><summary>Getting ÖBB station ID</summary>
-<p>
+### Getting ÖBB station ID
  
   1. Open [Scotty](https://fahrplan.oebb.at/bin/stboard.exe/en?newrequest=yes&)
   2. Click on **Station information**
@@ -62,23 +61,16 @@ To get the monitor to show only connections from your desired station you need t
   5. Copy the **evaId** number
  
   ![Scotty](https://user-images.githubusercontent.com/71500391/222954215-68fa832d-d0da-4dcb-8d3e-ba73a69d0a26.png)
- 
-</p>
-</details>
 
 Now that you have your desired ÖBB station ID you can finally go ahead and create a card on your Homeassistant Dashboard.
 
-<details><summary>Adding Webpage card</summary>
-<p>
+### Adding Webpage card
   
   1. Go to **Overview** and create a new **Webpage** card.
   2. In the **URL** field enter the following and replace the **departure_station** parameter with the ID of your desired station (evaId).
   ```
   /local/Scotty/index.html?departure_station=1234567
   ```
-  
-</p>
-</details>
 
 The ÖBB monitor should now display the upcoming departures from your public transport station. 
 
@@ -89,8 +81,7 @@ You can modify the OBB monitor by adding parameters to the URL in the Webpage ca
   /local/oebb-monitor/index.html?departure_station=1290401&destination_station=1292101&products_filter=1011111111011&num_journeys=7&additional_time=5&update_interval=60
   ```
 
-<details><summary>Personalize your Monitor</summary>
-<p>
+### Personalize your Monitor
  
   ### Parameters
 #### departure_station (required)
@@ -107,6 +98,3 @@ You can modify the OBB monitor by adding parameters to the URL in the Webpage ca
   Updates the data every X second(s) (default: 30)
 #### display_clock
  if "true", displays the current time
- 
-</p>
-</details>
