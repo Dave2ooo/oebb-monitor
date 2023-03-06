@@ -20,8 +20,6 @@ If you have not already, install a terminal add-on via the Homeassistant [Add-on
  
  
 Using the Terminal, execute the followig commands.
-<details><summary>Step-by-step installation</summary>
-<p>
  
 1. Clone the repository into **config/www/**
 ```
@@ -51,9 +49,6 @@ This CORS server must be running all the time in order to retrieve data from Sco
 I recommend setting the IP address to static on your router, so that the IP address never changes.
  
 ![script_js_IP_v2](https://user-images.githubusercontent.com/71500391/223068480-a72d2336-bff0-4eda-849a-cc47b628cf65.png)
-
-</p>
-</details>
 
 To get the monitor to show only connections from your desired station you need to get the respective station ID.
 
