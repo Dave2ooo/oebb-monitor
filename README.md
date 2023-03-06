@@ -16,7 +16,7 @@ In order to fetch the data from Scotty you will need to have a CORS server runni
  ## Installation
   
 To use the oebb-monitor you need to have access to a terminal on your Homeassistant.
-I recommend using Add-ons from the Hoemassistant [Add-on store](https://my.home-assistant.io/redirect/supervisor).
+If you have not already, install a terminal add-on via the Homeassistant [Add-on store](https://my.home-assistant.io/redirect/supervisor).
  
  
 Using the Terminal, execute the followig commands.
