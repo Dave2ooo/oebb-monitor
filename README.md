@@ -105,6 +105,7 @@ The ÖBB monitor should now display the upcoming departures from your public tra
  ![image](https://user-images.githubusercontent.com/71500391/223075897-32bed945-7c55-4c45-a52a-67f6a785526d.png)
 There are two possible reasons for this error.
  1. You didn't state the IP Address of your Homeassistant.
+
  Tho fix this, either write the IP Address as parameter in the URL with the parameter name **"hass_ip"** e.g.: "hass_ip=X.X.X.X" or
  
  do step 5 in [Clonig repository & installing node.js](#Clonig-repository-&-installing-node.js)
