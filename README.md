@@ -50,9 +50,8 @@ I recommend setting the IP address to static on your router, so that the IP addr
  
 ![script_js_IP_v2](https://user-images.githubusercontent.com/71500391/223068480-a72d2336-bff0-4eda-849a-cc47b628cf65.png)
 
-To get the monitor to show only connections from your desired station you need to get the respective station ID.
-
 ### Getting ÖBB station ID
+To get the monitor to only show connections from your desired station you need to get the respective station ID.
  
   1. Open [Scotty](https://fahrplan.oebb.at/bin/stboard.exe/en?newrequest=yes&)
   2. Click on **Station information**
@@ -62,9 +61,8 @@ To get the monitor to show only connections from your desired station you need t
  
   ![Scotty](https://user-images.githubusercontent.com/71500391/222954215-68fa832d-d0da-4dcb-8d3e-ba73a69d0a26.png)
 
-Now that you have your desired ÖBB station ID you can finally go ahead and create a card on your Homeassistant Dashboard.
-
 ### Adding Webpage card
+ Now that you have your desired ÖBB station ID you can finally go ahead and create a card on your Homeassistant Dashboard.
   
   1. Go to **Overview** and create a new **Webpage** card.
   2. In the **URL** field enter the following and replace the **departure_station** parameter with the ID of your desired station (evaId).
