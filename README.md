@@ -83,9 +83,9 @@ You can modify the OBB monitor by adding parameters to the URL in the Webpage ca
  
   ### Parameters
 #### departure_station (required)
-  ID of the departure station. See [Getting ÖBB station ID](#Getting-ÖBB-station-ID)
+  ID of the departure station. [Getting ÖBB station ID](#Getting-ÖBB-station-ID)
 #### destination_station
-  ID of the destination station. If provided, the monitor only shows connections from your departure station to your destination station.
+  ID of the destination station. If provided, the monitor only shows connections from your departure station to your destination station. [Getting ÖBB station ID](#Getting-ÖBB-station-ID)
 #### products_filter (better not touch this)
   filtering the mean of transportation (Train, Bus,...)
 #### num_journeys
