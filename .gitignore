@@ -1,3 +1,4 @@
 .env
+README.md
 server/node_modules
 server/package-lock.json
