@@ -23,13 +23,13 @@ Using the Terminal, execute the followig commands.
 <details><summary>Step-by-step installation</summary>
 <p>
  
-1. Clone the repository into config/www/
+1. Clone the repository into **config/www/**
 ```
-cd ~/config/www && git clone https://github.com/Dave2ooo/oebb-monitor.git && cd ~/config/www/oebb-monitor/server
+cd ~/config/www && git clone https://github.com/Dave2ooo/oebb-monitor.git
 ```
 2. Inside the server folder, install Node.js
 ```
-apk add nodejs npm
+cd ~/config/www/oebb-monitor/server && apk add nodejs npm
 ```
 3. Install npm
 ```
