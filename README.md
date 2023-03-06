@@ -46,8 +46,10 @@ Running CORS Anywhere on 0.0.0.0:8080
 This CORS server must be running all the time in order to retrieve data from Scotty.
   
 5. Finally, open the **script.js** file inside the **config/www/oebb-monitor** folder and change the value of the **hass_ip** parameter to your Homeassistant servers IP address.
-_I use the **Visual Studio Code** add-on to edit files._
-
+ _I use the **Visual Studio Code** add-on to edit files._
+ 
+I recommend setting the IP address to static on your router, so that the IP address never changes.
+ 
 ![script_js_IP_v2](https://user-images.githubusercontent.com/71500391/223068480-a72d2336-bff0-4eda-849a-cc47b628cf65.png)
 
 </p>
