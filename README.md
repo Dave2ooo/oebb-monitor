@@ -82,12 +82,12 @@ The ÖBB monitor should now display the upcoming departures from your public tra
   ```
  
   ### Parameters
-#### hass_ip (optional)
- IP address of your Homeassistant. This parameter can also be stated in the **script.js** file.
 #### departure_station (required)
   ID of the departure station. [Getting ÖBB station ID](#Getting-ÖBB-station-ID)
 #### destination_station
   ID of the destination station. If provided, the monitor only shows connections from your departure station to your destination station. [Getting ÖBB station ID](#Getting-ÖBB-station-ID)
+ #### hass_ip
+ IP address of your Homeassistant. This parameter can also be stated in the **script.js** file.
 #### products_filter (better not touch this)
   filtering the mean of transportation (Train, Bus,...)
 #### num_journeys
