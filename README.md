@@ -18,10 +18,8 @@ In order to fetch the data from Scotty you will need to have a CORS server runni
 To use the oebb-monitor you need to have access to a terminal on your Homeassistant.
 If you have not already, install a terminal add-on via the Homeassistant [Add-on store](https://my.home-assistant.io/redirect/supervisor).
  
- 
+### Clonig repository & installing node.js
 Using the Terminal, execute the followig commands.
-<details><summary>Step-by-step installation</summary>
-<p>
  
 1. Clone the repository into **config/www/**
 ```
@@ -52,13 +50,8 @@ I recommend setting the IP address to static on your router, so that the IP addr
  
 ![script_js_IP_v2](https://user-images.githubusercontent.com/71500391/223068480-a72d2336-bff0-4eda-849a-cc47b628cf65.png)
 
-</p>
-</details>
-
-To get the monitor to show only connections from your desired station you need to get the respective station ID.
-
-<details><summary>Getting ÖBB station ID</summary>
-<p>
+### Getting ÖBB station ID
+To get the monitor to only show connections from your desired station you need to get the respective station ID.
  
   1. Open [Scotty](https://fahrplan.oebb.at/bin/stboard.exe/en?newrequest=yes&)
   2. Click on **Station information**
@@ -67,41 +60,34 @@ To get the monitor to show only connections from your desired station you need t
   5. Copy the **evaId** number
  
   ![Scotty](https://user-images.githubusercontent.com/71500391/222954215-68fa832d-d0da-4dcb-8d3e-ba73a69d0a26.png)
- 
-</p>
-</details>
 
-Now that you have your desired ÖBB station ID you can finally go ahead and create a card on your Homeassistant Dashboard.
-
-<details><summary>Adding Webpage card</summary>
-<p>
+### Adding Webpage card
+ Now that you have your desired ÖBB station ID you can finally go ahead and create a card on your Homeassistant Dashboard.
   
   1. Go to **Overview** and create a new **Webpage** card.
   2. In the **URL** field enter the following and replace the **departure_station** parameter with the ID of your desired station (evaId).
   ```
   /local/Scotty/index.html?departure_station=1234567
   ```
-  
-</p>
-</details>
 
 The ÖBB monitor should now display the upcoming departures from your public transport station. 
 
-You can modify the OBB monitor by adding parameters to the URL in the Webpage card.
+
+### Personalize your Monitor
+ You can modify the OBB monitor by adding parameters to the URL in the Webpage card.
   e.g. 
   
   ```
   /local/oebb-monitor/index.html?departure_station=1290401&destination_station=1292101&products_filter=1011111111011&num_journeys=7&additional_time=5&update_interval=60
   ```
-
-<details><summary>Personalize your Monitor</summary>
-<p>
  
   ### Parameters
 #### departure_station (required)
-  ID of the departure station. See previous section for how to obtain your stations ID.
+  ID of the departure station. [Getting ÖBB station ID](#Getting-ÖBB-station-ID)
 #### destination_station
-  ID of the destination station. If provided, the monitor only shows connections from your departure station to your destination station.
+  ID of the destination station. If provided, the monitor only shows connections from your departure station to your destination station. [Getting ÖBB station ID](#Getting-ÖBB-station-ID)
+ #### hass_ip
+ IP address of your Homeassistant. This parameter can also be stated in the **script.js** file.
 #### products_filter (better not touch this)
   filtering the mean of transportation (Train, Bus,...)
 #### num_journeys
@@ -113,5 +99,13 @@ You can modify the OBB monitor by adding parameters to the URL in the Webpage ca
 #### display_clock
  if "true", displays the current time
  
-</p>
-</details>
+ 
+ ## Troubleshoot
+If you make any changes to
+ * index.html
+ * style.css
+ * script.js
+ 
+ you will need to clear your browsers cache so that the webpage card uses the updated files.
+ In Google Chrome only this [Add-on](https://chrome.google.com/webstore/detail/clear-site-data/aihgofjefdlhpnmeakpnjjeajofpcbhj) worked for me.
+ 
