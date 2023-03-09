@@ -194,6 +194,8 @@ function UpdateTable(response) {
       if (status == "Ausfall") {
         // Train cancelled
         dataCell1.innerHTML = "Ausfall";
+        dataCell2.style.textDecoration = "line-through solid";
+        dataCell3.style.textDecoration = "line-through solid";
         minutes_left = CalculateTimeLeft(scheduled_departure_time);
       } else {
         // Train late
