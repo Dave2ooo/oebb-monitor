@@ -33,6 +33,12 @@ cd ~/config/www/oebb-monitor/server && apk add nodejs npm
 ```
 npm install
 ```
+You can ignore the error message
+
+![npm_install_error](https://user-images.githubusercontent.com/71500391/225109773-18129feb-f28e-4fc5-86ed-525e10ae612a.jpg)
+
+and continue with the next step.
+
 4. Run the cors-server
 ```
 node cors-server.js
