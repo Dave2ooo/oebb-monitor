@@ -81,8 +81,14 @@ The ÖBB monitor should now display the upcoming departures from your public tra
 You can add as many monitors as you like by adding new webpage cards and changing the URL parameters.
 
 ### 2.4 Personalize your Monitor
- You can modify the OBB monitor by adding parameters to the URL in the Webpage card.
-  e.g. 
+ You can modify the ÖBB monitor by adding parameters to the URL in the Webpage card.
+ 
+ The URL must look like this
+ ```
+ /local/oebb-monitor/index.html?parameterName1=parameterValue1&parameterName2=parameterValue2
+ ```
+ 
+ e.g. 
   
   ```
   /local/oebb-monitor/index.html?departure_station=1290401&destination_station=1292101&products_filter=1011111111011&num_journeys=7&additional_time=5&update_interval=60
