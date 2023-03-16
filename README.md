@@ -96,7 +96,7 @@ You can add as many monitors as you like by adding new webpage cards and changin
  
 | Parameter | Description |
 | --- | --- |
-| departure_station (required) | ID of the departure station. [Getting ÖBB station ID](#Getting-ÖBB-station-ID) |
+| departure_station (required) | ID of the departure station. [Getting ÖBB station ID](#2.2 Getting ÖBB station ID) |
 | destination_station | ID of the destination station. If provided, the monitor only shows connections from your departure station to your destination station. [Getting ÖBB station ID](#Getting-ÖBB-station-ID) |
 | hass_ip | IP address of your Homeassistant. This parameter can also be stated in the **script.js** file. |
 | products_filter | Filtering the mode of transportation (Train, Bus,...) |
