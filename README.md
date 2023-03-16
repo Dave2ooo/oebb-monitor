@@ -88,23 +88,17 @@ You can add as many monitors as you like by adding new webpage cards and changin
   /local/oebb-monitor/index.html?departure_station=1290401&destination_station=1292101&products_filter=1011111111011&num_journeys=7&additional_time=5&update_interval=60
   ```
  
-  ### 2.5 Parameters
-#### departure_station (required)
-  ID of the departure station. [Getting ÖBB station ID](#Getting-ÖBB-station-ID)
-#### destination_station
-  ID of the destination station. If provided, the monitor only shows connections from your departure station to your destination station. [Getting ÖBB station ID](#Getting-ÖBB-station-ID)
- #### hass_ip
- IP address of your Homeassistant. This parameter can also be stated in the **script.js** file.
-#### products_filter (better not touch this)
-  filtering the mean of transportation (Train, Bus,...)
-#### num_journeys
-  number of connections to show (default: 6)
-#### additional_time
-  lead time in minutes (default: 0)
-#### update_interval
-  Updates the data every X second(s) (default: 30)
-#### display_clock
- if "true", displays the current time
+  ### 2.5 URL Parameters
+| Parameter | Description |
+| --- | --- |
+| departure_station (required) | ID of the departure station. [Getting ÖBB station ID](#Getting-ÖBB-station-ID) |
+| destination_station | ID of the destination station. If provided, the monitor only shows connections from your departure station to your destination station. [Getting ÖBB station ID](#Getting-ÖBB-station-ID) |
+| hass_ip | IP address of your Homeassistant. This parameter can also be stated in the **script.js** file. |
+| products_filter | Filtering the mode of transportation (Train, Bus,...) |
+| num_journeys | Number of connections to show (default: 6) |
+| additional_time | Lead time in minutes (default: 0) |
+| update_interval | Updates the data every X second(s) (default: 30) |
+| display_clock | If "true", displays the current time |
  
  
  ## 3 Troubleshoot
