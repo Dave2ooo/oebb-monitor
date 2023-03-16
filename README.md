@@ -88,7 +88,6 @@ You can add as many monitors as you like by adding new webpage cards and changin
   /local/oebb-monitor/index.html?departure_station=1290401&destination_station=1292101&products_filter=1011111111011&num_journeys=7&additional_time=5&update_interval=60
   ```
  
-  ### 2.5 URL Parameters
 | Parameter | Description |
 | --- | --- |
 | departure_station (required) | ID of the departure station. [Getting ÖBB station ID](#Getting-ÖBB-station-ID) |
