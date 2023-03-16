@@ -7,18 +7,18 @@ This Homeassistant ÖBB monitor shows you the live departure times of the public
 
  This ÖBB monitor is designed to be used in [Homeassistant](https://www.home-assistant.io/) but it's not restricted to Homeassistant.
  
-## Overview
+## 1 Overview
 This ÖBB monitor is basically a webpage which fetches data from [Scotty](https://fahrplan.oebb.at/bin/query.exe/en?) and displays it nicely.
 After cloning this repository into Homeassistant the webpage can easily be displayed using the **Webpage card** in the Homeassistant Dashboard.
 
 In order to fetch the data from Scotty you will need to have a CORS server running. This CORS server will be run by node.js using a terminal.
  
- ## Installation
+ ## 2 Installation
   
 To use the oebb-monitor you need to have access to a terminal on your Homeassistant.
 If you have not already, install a terminal add-on via the Homeassistant [Add-on store](https://my.home-assistant.io/redirect/supervisor).
  
-### Clonig repository & installing node.js
+### 2.1 Clonig repository & installing node.js
 Using the Terminal, execute the followig commands.
  
 1. Clone the repository into **config/www/**
@@ -56,7 +56,7 @@ I recommend setting the IP address to static on your router, so that the IP addr
  
 ![script_js_IP_v2](https://user-images.githubusercontent.com/71500391/223068480-a72d2336-bff0-4eda-849a-cc47b628cf65.png)
 
-### Getting ÖBB station ID
+### 2.2 Getting ÖBB station ID
 To get the monitor to only show connections from your desired station you need to get the respective station ID.
  
   1. Open [Scotty](https://fahrplan.oebb.at/bin/stboard.exe/en?newrequest=yes&)
@@ -67,7 +67,7 @@ To get the monitor to only show connections from your desired station you need t
  
   ![Scotty](https://user-images.githubusercontent.com/71500391/222954215-68fa832d-d0da-4dcb-8d3e-ba73a69d0a26.png)
 
-### Adding Webpage card
+### 2.3 Adding Webpage card
  Now that you have your desired ÖBB station ID you can finally go ahead and create a card on your Homeassistant Dashboard.
   
   1. Go to **Overview** and create a new **Webpage** card.
@@ -80,7 +80,7 @@ The ÖBB monitor should now display the upcoming departures from your public tra
 
 You can add as many monitors as you like by adding new webpage cards and changing the URL parameters.
 
-### Personalize your Monitor
+### 2.4 Personalize your Monitor
  You can modify the OBB monitor by adding parameters to the URL in the Webpage card.
   e.g. 
   
@@ -88,7 +88,7 @@ You can add as many monitors as you like by adding new webpage cards and changin
   /local/oebb-monitor/index.html?departure_station=1290401&destination_station=1292101&products_filter=1011111111011&num_journeys=7&additional_time=5&update_interval=60
   ```
  
-  ### Parameters
+  ### 2.5 Parameters
 #### departure_station (required)
   ID of the departure station. [Getting ÖBB station ID](#Getting-ÖBB-station-ID)
 #### destination_station
@@ -107,7 +107,7 @@ You can add as many monitors as you like by adding new webpage cards and changin
  if "true", displays the current time
  
  
- ## Troubleshoot
+ ## 3 Troubleshoot
 If you make any changes to
  * index.html
  * style.css
