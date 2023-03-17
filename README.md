@@ -1,7 +1,7 @@
 # oebb-monitor
 
 
-This Homeassistant ÖBB monitor shows you the live departure times of the public transportation system from your desired train, tram or bus station in Austria. You can also select a destination station to only see the connections you need.
+This Homeassistant ÖBB monitor shows you the live departure times of the public transportation system from your desired train, tram or bus station in Austria. You can also specify a destination station to only see the connections you need.
 
 ![image](https://user-images.githubusercontent.com/71500391/218267029-6c6f41e5-1109-4f6f-8117-bfa696efd8d4.png)
 
@@ -18,18 +18,18 @@ In order to fetch the data from Scotty you will need to have a CORS server runni
 To use the oebb-monitor you need to have access to a terminal on your Homeassistant.
 If you have not already, install a terminal add-on via the Homeassistant [Add-on store](https://my.home-assistant.io/redirect/supervisor).
  
-### 2.1 Clonig repository & installing node.js
+### 2.1 Cloning the repository & installing node.js
 Using the Terminal, execute the followig commands.
  
-1. Clone the repository into **config/www/**
+#### 1. Clone the repository
 ```
 cd ~/config/www && git clone https://github.com/Dave2ooo/oebb-monitor.git
 ```
-2. Inside the server folder, install Node.js
+#### 2. Install Node.js
 ```
 cd ~/config/www/oebb-monitor/server && apk add nodejs npm
 ```
-3. Install npm
+#### 3. Install npm
 ```
 npm install
 ```
@@ -39,7 +39,7 @@ You can ignore the error message
 
 and continue with the next step.
 
-4. Run the cors-server
+#### 4. Run the cors-server
 ```
 node cors-server.js
 ```
@@ -49,12 +49,14 @@ Running CORS Anywhere on 0.0.0.0:8080
 ```
 This CORS server must be running all the time in order to retrieve data from Scotty.
   
-5. Finally, open the **script.js** file inside the **config/www/oebb-monitor** folder and change the value of the **hass_ip** parameter to your Homeassistant servers IP address.
- _I use the **Visual Studio Code** add-on to edit files._
- 
-I recommend setting the IP address to static on your router, so that the IP address never changes.
+#### 5. Enter Homeassistant IP address
+Open the **script.js** file inside the **config/www/oebb-monitor** folder and change the value of the **hass_ip** parameter to your Homeassistants IP address. (The Homeassistants IP address can be obtained from your router)
+
+_I use the **Visual Studio Code** add-on to edit files._
  
 ![script_js_IP_v2](https://user-images.githubusercontent.com/71500391/223068480-a72d2336-bff0-4eda-849a-cc47b628cf65.png)
+
+I recommend setting the IP address to static on your router, so that the IP address never changes.
 
 ### 2.2 Getting ÖBB station ID
 To get the monitor to only show connections from your desired station you need to get the respective station ID.
@@ -73,7 +75,7 @@ To get the monitor to only show connections from your desired station you need t
   1. Go to **Overview** and create a new **Webpage** card.
   2. In the **URL** field enter the following and replace the **departure_station** parameter with the ID of your desired station (evaId).
   ```
-  /local/Scotty/index.html?departure_station=1234567
+  /local/Scotty/index.html?departure_station=1290401
   ```
 
 The ÖBB monitor should now display the upcoming departures from your public transport station. 
@@ -85,13 +87,22 @@ You can add as many monitors as you like by adding new webpage cards and changin
  
  The URL must look like this
  ```
- /local/oebb-monitor/index.html?parameterName1=parameterValue1&parameterName2=parameterValue2
+ /local/oebb-monitor/index.html?
+parameterName1=parameterValue1&
+parameterName2=parameterValue2&
+...
  ```
  
  e.g. 
   
   ```
-  /local/oebb-monitor/index.html?departure_station=1290401&destination_station=1292101&products_filter=1011111111011&num_journeys=7&additional_time=5&update_interval=60
+  /local/oebb-monitor/index.html?
+departure_station=1290401&
+destination_station=1292101&
+products_filter=1011111111011&
+num_journeys=7&
+additional_time=5&
+update_interval=60
   ```
  
 | Parameter | Description |
