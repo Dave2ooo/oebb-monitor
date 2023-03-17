@@ -109,7 +109,7 @@ update_interval=60
 | --- | --- |
 | departure_station (required) | ID of the departure station. [Getting ÖBB station ID](#22-getting-öbb-station-id) |
 | destination_station | ID of the destination station. If provided, the monitor only shows connections from your departure station to your destination station. [Getting ÖBB station ID](#22-getting-öbb-station-id) |
-| hass_ip | IP address of your Homeassistant. This parameter can also be stated in the **script.js** file. |
+| hass_ip | IP address of your Homeassistant. This parameter can also be stated in the **script.js** file. [Eenter Homeassistant IP address](#5-enter-homeassistant-ip-address) |
 | products_filter | Filtering the mode of transportation (Train, Bus,...) |
 | num_journeys | Number of connections to show (default: 6) |
 | additional_time | Lead time in minutes (default: 0) |
