@@ -118,15 +118,15 @@ update_interval=60
 
  
  ## 3 Troubleshoot
- ### Missing departure_station
- This message appears if you didn't declare the ID of the departure station. [Get ÖBB station ID](#22-getting-öbb-station-id) and enter it into the URL of the webpage card.
- 
- ### Failed to fetch
+ ### 3.1 Failed to fetch
  This message appears if the webpage is unable to fetch data from Scotty.
  
  Check if the CORS server is running in a terminal. It should say **"Running CORS Anywhere on 0.0.0.0:8080"**.
  
-### Editing files
-If you make any changes to **index.html, style.css or script.js** you will need to clear your browsers cache so that the webpage card uses the updated files.
+ ### 3.2 Missing departure_station
+ This message appears if you didn't declare the ID of the departure station. [Get ÖBB station ID](#22-getting-öbb-station-id) and enter it into the URL of the webpage card.
+ 
+ ### 3.3 Editing files
+ If you make any changes to **index.html, style.css or script.js** you will need to clear your browsers cache so that the webpage card uses the updated files.
  In Google Chrome only this [Add-on](https://chrome.google.com/webstore/detail/clear-site-data/aihgofjefdlhpnmeakpnjjeajofpcbhj) worked for me.
  
