@@ -93,7 +93,7 @@ parameterName2=parameterValue2&
 ...
  ```
  
- The following example URL updates the webpage every 60 seconds and shows you the next 7 connections from Wien Hbf to Floridsdorf Bahnhof that departure in after 5 minutes from now.
+ The following example URL updates the webpage every **60 seconds** and shows you the next **7 connections** from **Wien Hbf** to **Floridsdorf Bahnhof** that departure in after **5 minutes** from now.
   
   ```
   /local/oebb-monitor/index.html?
