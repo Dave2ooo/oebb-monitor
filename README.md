@@ -52,7 +52,7 @@ This CORS server must be running all the time in order to retrieve data from Sco
 #### 5. Enter Homeassistant IP address
 Open the **script.js** file inside the **config/www/oebb-monitor** folder and change the value of the **hass_ip** parameter to your Homeassistants IP address. (The Homeassistants IP address can be obtained from your router)
 
-_I use the **Visual Studio Code** add-on to edit files._
+_I use the **Visual Studio Code** from the [Add-on store](https://my.home-assistant.io/redirect/supervisor) to edit files._
  
 ![script_js_IP_v2](https://user-images.githubusercontent.com/71500391/223068480-a72d2336-bff0-4eda-849a-cc47b628cf65.png)
 
