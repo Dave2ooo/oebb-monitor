@@ -104,6 +104,7 @@ num_journeys=7&
 additional_time=5&
 update_interval=60
   ```
+ These are the parameters you can set.
  
 | Parameter | Description |
 | --- | --- |
@@ -114,7 +115,7 @@ update_interval=60
 | num_journeys | Number of connections to show (default: 6) |
 | additional_time | Lead time in minutes (default: 0) |
 | update_interval | Updates the data every X second(s) (default: 30) |
-| display_clock | If "true", displays the current time |
+| display_clock | If "true", displays the current time (default: false) |
 
 <details>
 <summary>products_filter explaination</summary>
