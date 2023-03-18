@@ -64,7 +64,7 @@ To get the monitor to only show connections from your desired station you need t
   1. Open [Scotty](https://fahrplan.oebb.at/bin/stboard.exe/en?newrequest=yes&)
   2. Click on **Station information**
   3. Enter the name of your station and click **Display information**
-  4. Click on **View <HTML> sourcecode**
+  4. Click on **View \<HTML\> sourcecode**
   5. Copy the **evaId** number
  
   ![Scotty](https://user-images.githubusercontent.com/71500391/222954215-68fa832d-d0da-4dcb-8d3e-ba73a69d0a26.png)
@@ -115,14 +115,18 @@ update_interval=60
 | additional_time | Lead time in minutes (default: 0) |
 | update_interval | Updates the data every X second(s) (default: 30) |
 | display_clock | If "true", displays the current time |
- 
+
  
  ## 3 Troubleshoot
-If you make any changes to
- * index.html
- * style.css
- * script.js
+ ### Missing departure_station
+ This message appears if you didn't declare the ID of the departure station. [Get ÖBB station ID](#22-getting-öbb-station-id) and enter it into the URL of the webpage card.
  
- you will need to clear your browsers cache so that the webpage card uses the updated files.
+ ### Failed to fetch
+ This message appears if the webpage is unable to fetch data from Scotty.
+ 
+ Check if the CORS server is running in a terminal. It should say **"Running CORS Anywhere on 0.0.0.0:8080"**.
+ 
+### Editing files
+If you make any changes to **index.html, style.css or script.js** you will need to clear your browsers cache so that the webpage card uses the updated files.
  In Google Chrome only this [Add-on](https://chrome.google.com/webstore/detail/clear-site-data/aihgofjefdlhpnmeakpnjjeajofpcbhj) worked for me.
  
