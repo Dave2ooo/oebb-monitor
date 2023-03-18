@@ -119,6 +119,7 @@ update_interval=60
 <details>
 <summary>products_filter explaination</summary>
  The products_filter can be used to filter the means of transportation that the monitor will show.
+ 
  | products_filter | Description |
  | --- | --- |
 |0000000000001 | RGJ |
@@ -135,7 +136,9 @@ update_interval=60
 |0100000000000 | ? |
 |1000000000000 | RJ / RJX |
  
- You can combine as many filters as you like. This filter will only show connections with tram or subway
+ You can combine as many filters as you like.
+ 
+ This filter for example, will only show connections by tram or subway.
  ```
  products_filter=0000000011000
  ```
