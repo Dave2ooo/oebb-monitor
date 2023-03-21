@@ -167,3 +167,6 @@ update_interval=60
  If you make any changes to **index.html, style.css or script.js** you will need to clear your browsers cache so that the webpage card uses the updated files.
  In Google Chrome only this [Add-on](https://chrome.google.com/webstore/detail/clear-site-data/aihgofjefdlhpnmeakpnjjeajofpcbhj) worked for me.
  
+ ### 3.4 Further help
+ Feel free to create an [issue](https://github.com/Dave2ooo/oebb-monitor/issues) if you need further help or want to contact me.
+ 
