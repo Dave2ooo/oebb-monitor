@@ -13,7 +13,7 @@ After cloning this repository into Homeassistant, the webpage can easily be disp
 
 In order to fetch the data from Scotty you will need to have a CORS server running. This CORS server will be run by node.js using a terminal.
  
- ## 2 Installation
+ ## 2 Installing
   
 To use the oebb-monitor you need to have access to a terminal on your Homeassistant.
 If you have not already, install a terminal add-on via the Homeassistant [Add-on store](https://my.home-assistant.io/redirect/supervisor).
@@ -50,7 +50,7 @@ Running CORS Anywhere on 0.0.0.0:8080
 This CORS server must be running all the time in order to retrieve data from Scotty.
   
 #### 5. Enter Homeassistant IP address
-Open the **script.js** file inside the **config/www/oebb-monitor** folder and change the value of the **hass_ip** parameter to your Homeassistants IP address. (The Homeassistants IP address can be obtained from your router)
+Open the **script.js** file inside the **config/www/oebb-monitor** folder. Change the value of the **hass_ip** parameter to your Homeassistants IP address. (The Homeassistants IP address can be obtained from your router)
 
 _I use the **Visual Studio Code** from the [Add-on store](https://my.home-assistant.io/redirect/supervisor) to edit files._
  
@@ -70,14 +70,16 @@ To get the monitor to only show connections from your desired station you need t
   ![Scotty](https://user-images.githubusercontent.com/71500391/222954215-68fa832d-d0da-4dcb-8d3e-ba73a69d0a26.png)
 
 ### 2.3 Adding Webpage card
- Now that you have your desired ÖBB station ID you can finally go ahead and create a card on your Homeassistant Dashboard.
+ Now that you have your ÖBB station ID you can finally go ahead and create a card on your Homeassistant Dashboard.
   
   1. Go to **Overview** and create a new **Webpage** card.
-  2. In the **URL** field enter the following and replace the **departure_station** parameter with the ID of your desired station (evaId).
+  2. In the **URL** field enter the following:
   ```
   /local/Scotty/index.html?departure_station=1290401
   ```
-
+  3. Replace the **departure_station** parameter value with the ID of your desired station (evaId).
+  4. Click on **Save**.
+  
 The ÖBB monitor should now display the upcoming departures from your public transport station. 
 
 You can add as many monitors as you like by adding new webpage cards and changing the URL parameters.
@@ -88,8 +90,8 @@ You can add as many monitors as you like by adding new webpage cards and changin
  The URL must look like this
  ```
  /local/oebb-monitor/index.html?
-parameterName1=parameterValue1&
-parameterName2=parameterValue2&
+<parameterName1>=<parameterValue1>&
+<parameterName2>=<parameterValue2>&
 ...
  ```
  
@@ -147,11 +149,13 @@ update_interval=60
  
  ## 3 Troubleshoot
  ### 3.1 Failed to fetch
+ ![image](https://user-images.githubusercontent.com/71500391/226706374-dc9a5a8d-8c8b-440f-bbb3-c394eaf8cf69.png)
  This message appears if the webpage is unable to fetch data from Scotty.
  
  Check if the CORS server is running in a terminal. It should say **"Running CORS Anywhere on 0.0.0.0:8080"**.
  
  ### 3.2 Missing departure_station
+ ![image](https://user-images.githubusercontent.com/71500391/226706831-26350e41-2c83-42ee-a17b-a262ee8b2923.png)
  This message appears if you didn't declare the ID of the departure station. [Get ÖBB station ID](#22-getting-öbb-station-id) and enter it into the URL of the webpage card.
  
  ### 3.3 Editing files
