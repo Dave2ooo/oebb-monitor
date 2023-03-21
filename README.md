@@ -65,7 +65,7 @@ To get the monitor to only show connections from your desired station you need t
   2. Click on **Station information**
   3. Enter the name of your station and click **Display information**
   4. Click on **View \<HTML\> sourcecode**
-  5. Copy the **evaId** number.
+  5. Copy the *evaId* number.
  
  The **evaID** is the ÖBB station ID. This ID is needed in the next step.
  
@@ -80,7 +80,7 @@ To get the monitor to only show connections from your desired station you need t
   ```
   /local/oebb-monitor/index.html?departure_station=<YOUR_STATION_ID>
   ```
-  4. Replace **<YOUR_STATION_ID>** with the ÖBB station ID from the previous step (evaId).
+  4. Replace *<YOUR_STATION_ID>* with the ÖBB station ID from the previous step (evaId).
   5. Click on **Save**.
   
 The ÖBB monitor should now display the upcoming departures from your public transport station. 
