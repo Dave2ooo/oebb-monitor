@@ -65,20 +65,23 @@ To get the monitor to only show connections from your desired station you need t
   2. Click on **Station information**
   3. Enter the name of your station and click **Display information**
   4. Click on **View \<HTML\> sourcecode**
-  5. Copy the **evaId** number
+  5. Copy the **evaId** number.
+ 
+ The **evaID** is the ÖBB station ID. This ID is needed in the next step.
  
   ![Scotty](https://user-images.githubusercontent.com/71500391/222954215-68fa832d-d0da-4dcb-8d3e-ba73a69d0a26.png)
 
 ### 2.3 Adding Webpage card
  Now that you have your ÖBB station ID you can finally go ahead and create a card on your Homeassistant Dashboard.
   
-  1. Go to **Overview** and create a new **Webpage** card.
-  2. In the **URL** field enter the following:
+  1. Go to **Overview**.
+  2. Create a new **Webpage** card.
+  3. Enter the following into the **URL** field:
   ```
   /local/oebb-monitor/index.html?departure_station=<YOUR_STATION_ID>
   ```
-  3. Replace the **departure_station** parameter value with the ID of your desired station (evaId).
-  4. Click on **Save**.
+  4. Replace **<YOUR_STATION_ID>** with the ÖBB station ID from the previous step (evaId).
+  5. Click on **Save**.
   
 The ÖBB monitor should now display the upcoming departures from your public transport station. 
 
