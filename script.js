@@ -76,7 +76,7 @@ const error_msg_departure_station_missing =
   'Departure station must be stated in the URL: "/local/oebb-monitor/index.html?departure_station=1234567"';
 
 const error_msg_departure_station_not_edited =
-  "Change <YOUR_STATION_ID> to your ÖBB station ID in the URL";
+  "Change &ltYOUR_STATION_ID&gt to your ÖBB station ID in the URL";
 
 var loadedFlag = false;
 
@@ -243,15 +243,18 @@ window.addEventListener("load", (event) => {
     document.getElementById("current_time").innerHTML = error_msg_ip_missing;
     console.error(error_msg_ip_missing);
     return;
-  } else if (!urlParams.has("departure_station")) {
+  }
+  if (!urlParams.has("departure_station")) {
     document.getElementById("current_time").innerHTML =
       error_msg_departure_station_missing;
     console.error(error_msg_departure_station_missing);
     return;
-  } else if (departure_station == "<YOUR_STATION_ID>") {
+  }
+  if (departure_station == "<YOUR_STATION_ID>") {
     document.getElementById("current_time").innerHTML =
       error_msg_departure_station_not_edited;
     console.error(error_msg_departure_station_not_edited);
+    return;
   }
 
   setInterval(GetLatestTime, 1000);
