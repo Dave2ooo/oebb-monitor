@@ -75,7 +75,7 @@ To get the monitor to only show connections from your desired station you need t
   1. Go to **Overview** and create a new **Webpage** card.
   2. In the **URL** field enter the following:
   ```
-  /local/oebb-monitor/index.html?departure_station=1290401
+  /local/oebb-monitor/index.html?departure_station=<YOUR_STATION_ID>
   ```
   3. Replace the **departure_station** parameter value with the ID of your desired station (evaId).
   4. Click on **Save**.
