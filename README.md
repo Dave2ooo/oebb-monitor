@@ -150,12 +150,14 @@ update_interval=60
  ## 3 Troubleshoot
  ### 3.1 Failed to fetch
  ![image](https://user-images.githubusercontent.com/71500391/226706374-dc9a5a8d-8c8b-440f-bbb3-c394eaf8cf69.png)
+ 
  This message appears if the webpage is unable to fetch data from Scotty.
  
  Check if the CORS server is running in a terminal. It should say **"Running CORS Anywhere on 0.0.0.0:8080"**.
  
  ### 3.2 Missing departure_station
  ![image](https://user-images.githubusercontent.com/71500391/226706831-26350e41-2c83-42ee-a17b-a262ee8b2923.png)
+ 
  This message appears if you didn't declare the ID of the departure station. [Get ÖBB station ID](#22-getting-öbb-station-id) and enter it into the URL of the webpage card.
  
  ### 3.3 Editing files
