@@ -78,6 +78,9 @@ const error_msg_departure_station_missing =
 const error_msg_departure_station_not_edited =
   "Change &ltYOUR_STATION_ID&gt to your ÖBB station ID in the URL";
 
+const error_msg_no_journeys =
+  "No journeys found. Check if station ID is correct";
+
 var loadedFlag = false;
 
 var last_response = "";
@@ -148,7 +151,9 @@ function UpdateTable(response) {
   json_data_string = json_data_string.trimStart();
   var json_data = JSON.parse(json_data_string);
   if (json_data.journey == undefined) {
-    console.error("no journeys available \n" + json_data_string);
+    document.getElementById("current_time").innerHTML = error_msg_no_journeys;
+    console.error(error_msg_no_journeys);
+    return;
   }
   // #endregion
 
