@@ -1,11 +1,9 @@
 # oebb-monitor
 
 
-This Homeassistant ÖBB monitor shows you the live departure times of the public transportation system from your desired train, tram or bus station in Austria. You can  specify a destination station to only see the connections you need.
+This ÖBB monitor shows you the live departure times of your desired train, tram or bus station in your Homeassistant Dashboard. You can  specify a destination station to only see the connections you need.
 
 ![image](https://user-images.githubusercontent.com/71500391/218267029-6c6f41e5-1109-4f6f-8117-bfa696efd8d4.png)
-
- This ÖBB monitor is designed to be used in [Homeassistant](https://www.home-assistant.io/) but it's not restricted to Homeassistant.
  
 ## 1 Overview
 This ÖBB monitor is basically a webpage which fetches data from [Scotty](https://fahrplan.oebb.at/bin/query.exe/en?) and displays it nicely.
@@ -65,7 +63,7 @@ To get the monitor to only show connections from your desired station you need t
   2. Click on **Station information**
   3. Enter the name of your station and click **Display information**
   4. Click on **View \<HTML\> sourcecode**
-  5. Copy the **evaId** number.
+  5. Copy the *evaId* number.
  
  The **evaID** is the ÖBB station ID. This ID is needed in the next step.
  
@@ -80,7 +78,7 @@ To get the monitor to only show connections from your desired station you need t
   ```
   /local/oebb-monitor/index.html?departure_station=<YOUR_STATION_ID>
   ```
-  4. Replace **<YOUR_STATION_ID>** with the ÖBB station ID from the previous step (evaId).
+  4. Replace *<YOUR_STATION_ID>* with the ÖBB station ID from the previous step (evaId).
   5. Click on **Save**.
   
 The ÖBB monitor should now display the upcoming departures from your public transport station. 
@@ -166,4 +164,7 @@ update_interval=60
  ### 3.3 Editing files
  If you make any changes to **index.html, style.css or script.js** you will need to clear your browsers cache so that the webpage card uses the updated files.
  In Google Chrome only this [Add-on](https://chrome.google.com/webstore/detail/clear-site-data/aihgofjefdlhpnmeakpnjjeajofpcbhj) worked for me.
+ 
+ ### 3.4 Further help
+ Feel free to create an [issue](https://github.com/Dave2ooo/oebb-monitor/issues) if you need further help or want to contact me.
  
