@@ -80,6 +80,8 @@ To get the monitor to only show connections from your desired station you need t
   ```
   4. Replace *<YOUR_STATION_ID>* with the ÖBB station ID from the previous step (evaId).
   5. Click on **Save**.
+
+![Webpage_card_configuration](https://user-images.githubusercontent.com/71500391/227988077-4b3c9f1c-d9dd-4db8-88e3-dfdc646a7d25.png)
   
 The ÖBB monitor should now display the upcoming departures from your public transport station. 
 
@@ -161,10 +163,15 @@ update_interval=60
  
  This message appears if you didn't declare the ID of the departure station. [Get ÖBB station ID](#22-getting-öbb-station-id) and enter it into the URL of the webpage card.
  
- ### 3.3 Editing files
+ ### 3.3 No journeys found
+ ![Troubleshoot_invalid_station_id](https://user-images.githubusercontent.com/71500391/227987775-4cfac10e-7f90-40ae-9703-3a7c289791de.png)
+
+ This message appears when Scotty cannot find any connection from your station. Check if you entered the correct station ID from [Getting ÖBB station ID](#22-getting-öbb-station-id).
+ 
+ ### 3.4 Editing files
  If you make any changes to **index.html, style.css or script.js** you will need to clear your browsers cache so that the webpage card uses the updated files.
  In Google Chrome only this [Add-on](https://chrome.google.com/webstore/detail/clear-site-data/aihgofjefdlhpnmeakpnjjeajofpcbhj) worked for me.
  
- ### 3.4 Further help
+ ### 3.5 Further help
  Feel free to create an [issue](https://github.com/Dave2ooo/oebb-monitor/issues) if you need further help or want to contact me.
  
