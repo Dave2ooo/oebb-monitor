@@ -119,7 +119,9 @@ update_interval=60
 | num_journeys | Number of connections to show (default: 6) |
 | additional_time | Lead time in minutes (default: 0) |
 | update_interval | Updates the data every X second(s) (default: 30) |
-| display_clock | If "true", displays the current time (default: false) |
+| show_clock | If "true", displays the current time (default: false) |
+| show_header | If "true", displays the table header (default: false) |
+| show_line | If "true", displays the transportation line |
 
 <details>
 <summary>products_filter explaination</summary>
