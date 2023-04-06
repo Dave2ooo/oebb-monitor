@@ -5,7 +5,17 @@ body {
   font-size: 20px;
   padding: 0px;
   margin: 0px;
+  /* Hide scrollbar */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
 
 .cell {
   line-height: 1.1;
