@@ -19,15 +19,15 @@ If you have not already, install a terminal add-on via the Homeassistant [Add-on
 ### 2.1 Cloning the repository & installing node.js
 Using the Terminal, execute the followig commands.
  
-#### 1. Clone the repository
+#### 1 Clone the repository
 ```
 cd ~/config/www && git clone https://github.com/Dave2ooo/oebb-monitor.git
 ```
-#### 2. Install Node.js
+#### 2 Install Node.js
 ```
 cd ~/config/www/oebb-monitor/server && apk add nodejs npm
 ```
-#### 3. Install npm
+#### 3 Install npm
 ```
 npm install
 ```
@@ -37,7 +37,7 @@ You can ignore the error message
 
 and continue with the next step.
 
-#### 4. Run the cors-server
+#### 4 Run the cors-server
 ```
 node cors-server.js
 ```
@@ -47,7 +47,7 @@ Running CORS Anywhere on 0.0.0.0:8080
 ```
 This CORS server must be running all the time in order to retrieve data from Scotty.
   
-#### 5. Enter Homeassistant IP address
+#### 5 Enter Homeassistant IP address
 Open the **script.js** file inside the **config/www/oebb-monitor** folder. Change the value of the **hass_ip** parameter to your Homeassistants IP address. (The Homeassistants IP address can be obtained from your router)
 
 _I use the **Visual Studio Code** from the [Add-on store](https://my.home-assistant.io/redirect/supervisor) to edit files._
@@ -158,9 +158,10 @@ update_interval=60
  
  This message appears if the webpage is unable to fetch data from Scotty.
  
- Check if the CORS server is running in a terminal. It should say **"Running CORS Anywhere on 0.0.0.0:8080"**.
+* Check if the CORS server is running in a terminal. It should say **"Running CORS Anywhere on 0.0.0.0:8080"**.
+* Make sure you entered the correct IP address in [Enter Homeassistant IP address](#5-enter-homeassistant-ip-address)
  
- ### 3.2 Missing departure_station
+ ### 3.2 Missing departure_station 
  ![image](https://user-images.githubusercontent.com/71500391/226706831-26350e41-2c83-42ee-a17b-a262ee8b2923.png)
  
  This message appears if you didn't declare the ID of the departure station. [Get ÖBB station ID](#22-getting-öbb-station-id) and enter it into the URL of the webpage card.
