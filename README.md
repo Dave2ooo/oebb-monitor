@@ -1,12 +1,12 @@
 # oebb-monitor
 
 
-This ÖBB monitor shows you the live departure times of your desired train, tram or bus station in your Homeassistant Dashboard. You can  specify a destination station to only see the connections you need.
+This oebb-monitor shows you the live departure times of your desired train, tram or bus station in your Homeassistant Dashboard. You can  specify a destination station to only see the connections you need.
 
 ![image](https://user-images.githubusercontent.com/71500391/218267029-6c6f41e5-1109-4f6f-8117-bfa696efd8d4.png)
  
 ## 1 Overview
-This ÖBB monitor is basically a webpage which fetches data from [Scotty](https://fahrplan.oebb.at/bin/query.exe/en?) and displays it nicely.
+This oebb-monitor is basically a webpage which fetches data from [Scotty](https://fahrplan.oebb.at/bin/query.exe/en?) and displays it nicely.
 After cloning this repository into Homeassistant, the webpage can easily be displayed using the **Webpage card** in the Homeassistant Dashboard.
 
 In order to fetch the data from Scotty you will need to have a CORS server running. This CORS server will be run by node.js using a terminal.
@@ -158,7 +158,7 @@ update_interval=60
  
  This message appears if the webpage is unable to fetch data from Scotty.
  
-* Check if the CORS server is running in a terminal. It should say **"Running CORS Anywhere on 0.0.0.0:8080"**.
+* Check if the CORS server is running in a terminal. [Run the cors-server](#4-run-the-cors-server)
 * Make sure you entered the correct IP address in [Enter Homeassistant IP address](#5-enter-homeassistant-ip-address)
  
  ### 3.2 Missing departure_station 
