@@ -106,7 +106,9 @@ departure_station=1290401&
 destination_station=1292101&
 num_journeys=7&
 additional_time=5&
-update_interval=60
+update_interval=60&
+show_header=true&
+show_line=true
   ```
  These are the parameters you can set.
  
