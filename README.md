@@ -1,5 +1,4 @@
-# oebb-monitor
-
+# ! This project is obsolete and replaced by [oebb-monitor-v2](https://github.com/Dave2ooo/oebb-monitor-v2) !
 
 This oebb-monitor shows you the live departure times of your desired train, tram or bus station in your Homeassistant Dashboard. You can  specify a destination station to only see the connections you need.
 
